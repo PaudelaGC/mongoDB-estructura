@@ -1,0 +1,451 @@
+{
+    "modelName": "New Model",
+    "collections": [
+        {
+            "collectionName": "Proveïdors",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "NIF",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "cc44815d-deb8-47d8-9bb5-40870e9edd82",
+                    "required": true,
+                    "error": {}
+                },
+                {
+                    "name": "Fax",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "numeric",
+                    "GUID": "deb3aaef-0f5a-4f22-8810-caaed5afc639",
+                    "mode": "integer32",
+                    "required": true,
+                    "error": {}
+                },
+                {
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "numeric",
+                    "GUID": "2df2cc69-ce57-440b-95c9-23e0b2e0070a",
+                    "name": "Telèfon",
+                    "mode": "integer32",
+                    "required": true,
+                    "error": {}
+                },
+                {
+                    "name": "Nom",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "9079486c-cec1-4d0b-9a9b-43721ba65910",
+                    "required": true,
+                    "error": {}
+                },
+                {
+                    "name": "Adreça",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "document",
+                    "properties": [
+                        {
+                            "name": "Número",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "numeric",
+                            "GUID": "4f99c43e-6cc1-4605-a876-dd026783b76c",
+                            "mode": "integer32",
+                            "required": true,
+                            "error": {}
+                        },
+                        {
+                            "name": "Carrer",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "b86fc39d-d962-4eb2-b3e5-35a3901b70f3",
+                            "required": true,
+                            "error": {}
+                        },
+                        {
+                            "name": "Pis",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "numeric",
+                            "GUID": "50857c32-7bc9-4050-a01a-bcf76730d29b",
+                            "mode": "integer32",
+                            "required": true,
+                            "error": {}
+                        },
+                        {
+                            "name": "Porta",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "numeric",
+                            "GUID": "933d9bd5-17dd-416f-8400-543742689291",
+                            "mode": "integer32",
+                            "required": true,
+                            "error": {}
+                        },
+                        {
+                            "name": "Codi postal",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "numeric",
+                            "GUID": "9e7f5af3-b8f9-4e8e-881a-bbc92acfabaf",
+                            "mode": "integer32",
+                            "required": true,
+                            "error": {}
+                        },
+                        {
+                            "name": "País",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "f173d161-3062-4506-a3fe-a10c2bc74c0e",
+                            "required": true,
+                            "error": {}
+                        }
+                    ],
+                    "additionalProperties": false,
+                    "GUID": "1a0e5a7a-4a38-4208-9b44-127bf3987107",
+                    "required": true,
+                    "error": {}
+                },
+                {
+                    "name": "_id",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "objectId",
+                    "GUID": "f369cc37-455f-4e0c-ae75-ee49a43c22c3",
+                    "required": true,
+                    "primaryKey": true,
+                    "error": {}
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "7862c4cb-a16c-46cf-865c-7c5e59bc343d"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "validationLevel": "Off",
+            "validationAction": "Warn",
+            "storageEngineName": "WiredTiger",
+            "collectionUsers": [],
+            "indexes": [],
+            "collation": {},
+            "sharding": {
+                "unique": true,
+                "collation": "null"
+            },
+            "GUID": "d560ccb6-57a5-49de-8cdc-449d6b75e00e",
+            "bucketId": "9c9ae1fb-7149-4f48-8dce-cbfd826d25e1",
+            "childRelationships": [
+                "1a502168-811a-4261-838d-e29da6bbe1fc"
+            ]
+        },
+        {
+            "collectionName": "Ulleres",
+            "type": "object",
+            "properties": [
+                {
+                    "GUID": "9d922846-1157-460e-b021-657d407b798e",
+                    "name": "Proveïdor",
+                    "type": "reference",
+                    "$ref": "#model/definitions/Proveïdor",
+                    "refType": "model",
+                    "ref": "acc5f5f0-3960-41d2-b487-8810f10d6959",
+                    "refIdPath": [
+                        "312ac0bd-fba6-4da8-88fa-afe94b9cac6a",
+                        "cf8effaa-40b7-453b-a1bc-02f011b23574",
+                        "acc5f5f0-3960-41d2-b487-8810f10d6959"
+                    ],
+                    "isActivated": true,
+                    "required": true,
+                    "foreignCollection": "d560ccb6-57a5-49de-8cdc-449d6b75e00e",
+                    "relationshipType": "Foreign Key",
+                    "hackoladeMeta": {},
+                    "foreignField": [
+                        "d560ccb6-57a5-49de-8cdc-449d6b75e00e",
+                        "f369cc37-455f-4e0c-ae75-ee49a43c22c3"
+                    ],
+                    "parentRelationship": "1a502168-811a-4261-838d-e29da6bbe1fc",
+                    "error": {}
+                },
+                {
+                    "name": "Graduació",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "document",
+                    "properties": [
+                        {
+                            "name": "Vidre esq",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "numeric",
+                            "GUID": "a184c031-21ac-4a5b-998a-b5c453a85ca9",
+                            "mode": "decimal128",
+                            "required": true,
+                            "error": {}
+                        },
+                        {
+                            "name": "Vidre dret",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "numeric",
+                            "GUID": "5cd3bcee-307f-4bee-b9b3-71043b4d99f6",
+                            "mode": "decimal128",
+                            "required": true,
+                            "error": {}
+                        }
+                    ],
+                    "additionalProperties": false,
+                    "GUID": "b0d8a873-b910-4fc1-b4f6-be9160e42383",
+                    "required": true,
+                    "error": {}
+                },
+                {
+                    "name": "Marca",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "8b64052d-faff-43af-8047-6a8ffdaeeb1b",
+                    "required": true,
+                    "error": {}
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "5c0d2e18-8764-415d-86b1-62e53ff54ba4"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "validationLevel": "Off",
+            "validationAction": "Warn",
+            "storageEngineName": "WiredTiger",
+            "collectionUsers": [],
+            "indexes": [],
+            "collation": {},
+            "sharding": {
+                "unique": true,
+                "collation": "null"
+            },
+            "GUID": "24c7b532-16be-492a-a791-2b414ae10f78",
+            "bucketId": "9c9ae1fb-7149-4f48-8dce-cbfd826d25e1"
+        }
+    ],
+    "buckets": [
+        {
+            "name": "Òptica",
+            "type": "bucket",
+            "collectionIds": [
+                "d560ccb6-57a5-49de-8cdc-449d6b75e00e",
+                "24c7b532-16be-492a-a791-2b414ae10f78"
+            ],
+            "backgroundColor": {
+                "r": 216,
+                "g": 0,
+                "b": 115,
+                "a": 1
+            },
+            "show": true,
+            "isActivated": true,
+            "GUID": "9c9ae1fb-7149-4f48-8dce-cbfd826d25e1"
+        }
+    ],
+    "views": [],
+    "relationships": [
+        {
+            "name": "fk Ulleres. to Proveïdors._id",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "d560ccb6-57a5-49de-8cdc-449d6b75e00e",
+                    "f369cc37-455f-4e0c-ae75-ee49a43c22c3"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "24c7b532-16be-492a-a791-2b414ae10f78",
+                    "9d922846-1157-460e-b021-657d407b798e"
+                ]
+            ],
+            "childCardinality": "0..n",
+            "GUID": "1a502168-811a-4261-838d-e29da6bbe1fc",
+            "parentCollection": "d560ccb6-57a5-49de-8cdc-449d6b75e00e",
+            "childCollection": "24c7b532-16be-492a-a791-2b414ae10f78",
+            "hackoladeStyles": {
+                "GUID": "5b9eadd3-2899-480f-9308-acbeb1fccef9",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 814,
+                        "y": 559.5
+                    },
+                    {
+                        "x": 789,
+                        "y": 559.5
+                    },
+                    {
+                        "x": 789,
+                        "y": 584.5
+                    },
+                    {
+                        "x": 764,
+                        "y": 584.5
+                    }
+                ],
+                "sides": [
+                    "left",
+                    "right"
+                ]
+            }
+        }
+    ],
+    "users": [],
+    "diagramViews": [],
+    "idToNameHashTable": {
+        "9c9ae1fb-7149-4f48-8dce-cbfd826d25e1": "Òptica",
+        "d560ccb6-57a5-49de-8cdc-449d6b75e00e": "Proveïdors",
+        "9079486c-cec1-4d0b-9a9b-43721ba65910": "Nom",
+        "1a0e5a7a-4a38-4208-9b44-127bf3987107": "Adreça",
+        "b86fc39d-d962-4eb2-b3e5-35a3901b70f3": "Carrer",
+        "4f99c43e-6cc1-4605-a876-dd026783b76c": "Número",
+        "50857c32-7bc9-4050-a01a-bcf76730d29b": "Pis",
+        "933d9bd5-17dd-416f-8400-543742689291": "Porta",
+        "9e7f5af3-b8f9-4e8e-881a-bbc92acfabaf": "Codi postal",
+        "f173d161-3062-4506-a3fe-a10c2bc74c0e": "País",
+        "2df2cc69-ce57-440b-95c9-23e0b2e0070a": "Telèfon",
+        "deb3aaef-0f5a-4f22-8810-caaed5afc639": "Fax",
+        "cc44815d-deb8-47d8-9bb5-40870e9edd82": "NIF",
+        "24c7b532-16be-492a-a791-2b414ae10f78": "Ulleres",
+        "9d922846-1157-460e-b021-657d407b798e": "Proveïdor",
+        "acc5f5f0-3960-41d2-b487-8810f10d6959": "Proveïdor",
+        "f369cc37-455f-4e0c-ae75-ee49a43c22c3": "_id",
+        "1a502168-811a-4261-838d-e29da6bbe1fc": "fk Ulleres. to Proveïdors._id",
+        "8b64052d-faff-43af-8047-6a8ffdaeeb1b": "Marca",
+        "b0d8a873-b910-4fc1-b4f6-be9160e42383": "Graduació",
+        "a184c031-21ac-4a5b-998a-b5c453a85ca9": "Vidre esq",
+        "5cd3bcee-307f-4bee-b9b3-71043b4d99f6": "Vidre dret"
+    },
+    "definitions": {
+        "type": "definitions",
+        "properties": [
+            {
+                "name": "Proveïdor",
+                "hackoladeMeta": {},
+                "isActivated": true,
+                "type": "objectId",
+                "GUID": "acc5f5f0-3960-41d2-b487-8810f10d6959",
+                "required": true,
+                "error": {},
+                "definitionRefs": [
+                    [
+                        "24c7b532-16be-492a-a791-2b414ae10f78",
+                        "9d922846-1157-460e-b021-657d407b798e"
+                    ]
+                ]
+            }
+        ],
+        "GUID": "cf8effaa-40b7-453b-a1bc-02f011b23574"
+    },
+    "polyglotDefinitions": {
+        "type": "polyglotDefinitions",
+        "properties": [],
+        "GUID": "c60555c0-a800-4f7d-84c5-4354d1173708"
+    },
+    "externalDefinitions": {
+        "type": "externalDefinitions",
+        "properties": [],
+        "GUID": "f20d2f82-1904-442a-b188-b2a149b59ba1"
+    },
+    "sources": [],
+    "decorativeSymbols": [],
+    "dbVersion": "v6.0",
+    "dbVendor": "MongoDB",
+    "appTarget": "MONGODB",
+    "creationTS": "2023-03-06T11:17:07.127Z",
+    "GUID": "312ac0bd-fba6-4da8-88fa-afe94b9cac6a",
+    "isLineageEnabled": false,
+    "lastModifTS": "2023-03-06T11:46:18.749Z",
+    "persistenceSchemaVersion": "6",
+    "isCreatedByPlugin": true,
+    "pluginInformation": {
+        "pluginEngineVersion": "1.0.0"
+    },
+    "applicationInformation": {
+        "version": "6.9.4"
+    },
+    "settings": {
+        "centralPane": {
+            "dbLevel": {
+                "erd": [
+                    {
+                        "GUID": "d560ccb6-57a5-49de-8cdc-449d6b75e00e",
+                        "x": 524,
+                        "y": 460,
+                        "width": 240,
+                        "height": 249,
+                        "color": {}
+                    },
+                    {
+                        "GUID": "24c7b532-16be-492a-a791-2b414ae10f78",
+                        "x": 814,
+                        "y": 498,
+                        "width": 273,
+                        "height": 123,
+                        "color": {}
+                    }
+                ],
+                "erdDefinitions": {
+                    "erd": [],
+                    "rootPath": [],
+                    "entities": [],
+                    "decorativeSymbols": []
+                },
+                "buckets": [
+                    {
+                        "x": 484,
+                        "y": 420,
+                        "GUID": "9c9ae1fb-7149-4f48-8dce-cbfd826d25e1"
+                    }
+                ],
+                "collapsedNodes": [],
+                "activeRelationship": "",
+                "activeRelationshipFields": {
+                    "childField": [],
+                    "parentField": []
+                },
+                "selectedCollections": [],
+                "displayColorPicker": false,
+                "graphView": {
+                    "erd": [],
+                    "buckets": [],
+                    "decorativeSymbols": [],
+                    "forceLayout": true,
+                    "defaultLinkLength": 300
+                },
+                "diagramViews": [],
+                "decorativeSymbols": [],
+                "nestedCollectionsLayout": "horizontal",
+                "options": [],
+                "relationshipUpdateDisabled": false
+            },
+            "collectionLevel": {},
+            "changed": false
+        },
+        "dtDiagram": {
+            "collapsedNodes": [],
+            "shouldDistributeCollections": false
+        }
+    }
+}
