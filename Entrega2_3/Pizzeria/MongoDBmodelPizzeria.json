@@ -1,0 +1,1106 @@
+{
+    "modelName": "Pizzeria",
+    "collections": [
+        {
+            "collectionName": "Clients",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "Adreça",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "document",
+                    "properties": [
+                        {
+                            "name": "Carrer",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "1c75cd4e-dc72-44da-9a41-4ec42189d282",
+                            "required": true,
+                            "error": {}
+                        },
+                        {
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "51f60ed4-32d3-4338-aaa5-42177396651b",
+                            "name": "Localitat",
+                            "required": true,
+                            "error": {}
+                        },
+                        {
+                            "name": "Codi postal",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "numeric",
+                            "GUID": "316759b6-2823-45d9-9857-2523e13f81d9",
+                            "required": true,
+                            "mode": "integer32",
+                            "error": {}
+                        },
+                        {
+                            "name": "Provincia",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "54dec81f-6ddc-4d94-ab06-fd638f1f5bb2",
+                            "error": {}
+                        }
+                    ],
+                    "additionalProperties": false,
+                    "GUID": "1935e318-28a1-4e03-afb2-5a60ef706fba",
+                    "required": true,
+                    "error": {}
+                },
+                {
+                    "name": "Cognoms",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "21d035a7-5cac-4767-92b9-afcac0f35499",
+                    "required": true,
+                    "error": {}
+                },
+                {
+                    "name": "Telèfon",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "numeric",
+                    "GUID": "cd4041ed-15a3-495f-bf2b-00c2dbe8ee79",
+                    "required": true,
+                    "mode": "integer32",
+                    "error": {}
+                },
+                {
+                    "name": "Nom",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "81befb7d-4dd8-422e-aa31-13c49fc1a395",
+                    "required": true,
+                    "error": {}
+                },
+                {
+                    "name": "_id",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "objectId",
+                    "GUID": "8d011551-1a08-485b-a553-fd807f4a84e8",
+                    "required": true,
+                    "primaryKey": true,
+                    "error": {},
+                    "childRelationships": [
+                        "09cc8fad-5129-4600-bd55-47303883c053"
+                    ]
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "8c73f6c5-78e1-473c-90f8-e91a55ae372d"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "validationLevel": "Off",
+            "validationAction": "Warn",
+            "storageEngineName": "WiredTiger",
+            "collectionUsers": [],
+            "indexes": [],
+            "collation": {},
+            "sharding": {
+                "unique": true,
+                "collation": "null"
+            },
+            "GUID": "4afbf132-29f5-4d02-bc9d-1ceb2e0cb19e",
+            "bucketId": "4d591320-8230-46dd-b10c-4b35d0c7724e"
+        },
+        {
+            "collectionName": "Comandes",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "Client",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "objectId",
+                    "GUID": "d0611c1a-002e-427f-bdc6-3814c455b901",
+                    "required": true,
+                    "foreignCollection": "4afbf132-29f5-4d02-bc9d-1ceb2e0cb19e",
+                    "foreignField": [
+                        "4afbf132-29f5-4d02-bc9d-1ceb2e0cb19e",
+                        "8d011551-1a08-485b-a553-fd807f4a84e8"
+                    ],
+                    "relationshipType": "Foreign Key",
+                    "parentRelationship": "09cc8fad-5129-4600-bd55-47303883c053",
+                    "error": {}
+                },
+                {
+                    "name": "Botiga",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "objectId",
+                    "GUID": "eeffb23f-9863-429c-9b0d-a11f4e825482",
+                    "required": true,
+                    "foreignCollection": "c7730f6e-4359-41d9-aec4-43497a0f3c8e",
+                    "foreignField": [
+                        "c7730f6e-4359-41d9-aec4-43497a0f3c8e",
+                        "c8b6e1fc-319a-43f2-8873-8b0f48fb7441"
+                    ],
+                    "relationshipType": "Foreign Key",
+                    "parentRelationship": "f1ccb5f2-87cc-473e-89b2-8ccc46414c42",
+                    "error": {}
+                },
+                {
+                    "name": "_id",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "objectId",
+                    "GUID": "da29be9a-4ca2-4e25-b8b3-253f3fd8dfdb",
+                    "required": true,
+                    "primaryKey": true,
+                    "error": {}
+                },
+                {
+                    "name": "Repartiment",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "document",
+                    "properties": [
+                        {
+                            "name": "Repartidor",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "objectId",
+                            "GUID": "21864543-1ec5-4a92-9c33-a291fea3f1ef",
+                            "required": true,
+                            "foreignCollection": "c7730f6e-4359-41d9-aec4-43497a0f3c8e",
+                            "foreignField": [
+                                "c7730f6e-4359-41d9-aec4-43497a0f3c8e",
+                                "d5a0d833-0624-451b-9694-e648dd11da2d",
+                                "80b845f3-87c8-467a-9538-e47f8c4f4f7b",
+                                "3daf465a-c1a7-4678-8651-bbc40b0a59e6"
+                            ],
+                            "relationshipType": "Foreign Key",
+                            "parentRelationship": "ccdf126a-ec00-4a72-9b7c-25439370bb1c",
+                            "error": {}
+                        },
+                        {
+                            "name": "Data/hora",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "date",
+                            "primaryKey": false,
+                            "required": true,
+                            "GUID": "189b788d-e297-4f68-940b-a0829c08b52d",
+                            "error": {}
+                        }
+                    ],
+                    "additionalProperties": false,
+                    "required": false,
+                    "GUID": "a1833b81-5fb6-47fb-9f18-6b7f2f48c108",
+                    "error": {}
+                },
+                {
+                    "name": "Productes",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "array",
+                    "properties": [
+                        {
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "document",
+                            "properties": [
+                                {
+                                    "hackoladeMeta": {},
+                                    "isActivated": true,
+                                    "type": "objectId",
+                                    "GUID": "c8129a37-eacc-4989-b207-8a2e1731e9d6",
+                                    "name": "IdProducte",
+                                    "required": true,
+                                    "foreignCollection": "7639b77a-f5bd-4369-8184-306da7254a48",
+                                    "foreignField": [
+                                        "7639b77a-f5bd-4369-8184-306da7254a48",
+                                        "fb85c5c0-faa4-47a4-bf8c-a6bfa773e8c9"
+                                    ],
+                                    "relationshipType": "Foreign Key",
+                                    "parentRelationship": "7f70e396-c41c-4c8b-83e9-e99e632795bd",
+                                    "error": {}
+                                },
+                                {
+                                    "name": "Quantitat",
+                                    "hackoladeMeta": {},
+                                    "isActivated": true,
+                                    "type": "numeric",
+                                    "GUID": "ba801954-5aa6-4aa5-a439-acc04ed1f35e",
+                                    "required": true,
+                                    "mode": "integer32",
+                                    "error": {}
+                                }
+                            ],
+                            "additionalProperties": false,
+                            "GUID": "57dd0e2c-8716-426e-af02-ef6fcaf2aa11",
+                            "arrayItem": true,
+                            "arrayParentType": "array",
+                            "displayName": "Producte",
+                            "error": {}
+                        }
+                    ],
+                    "additionalItems": true,
+                    "GUID": "c96b5f50-c195-436b-80ff-ff2a17925d5f",
+                    "required": true,
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "error": {}
+                },
+                {
+                    "name": "Data/hora",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "date",
+                    "primaryKey": false,
+                    "GUID": "2b7e6888-0684-4d4c-8bfc-870859716204",
+                    "required": true,
+                    "error": {}
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "3a4a530c-70e2-4330-be8c-e6c5c8f1df9e"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "validationLevel": "Off",
+            "validationAction": "Warn",
+            "storageEngineName": "WiredTiger",
+            "collectionUsers": [],
+            "indexes": [],
+            "collation": {},
+            "sharding": {
+                "unique": true,
+                "collation": "null"
+            },
+            "GUID": "f517886a-f265-4743-aabe-d0669088bc79",
+            "bucketId": "4d591320-8230-46dd-b10c-4b35d0c7724e"
+        },
+        {
+            "collectionName": "Productes",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "Tipus",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "e5a1ad36-7a2a-4626-97e6-91def1587a11",
+                    "required": true,
+                    "error": {}
+                },
+                {
+                    "name": "Preu",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "numeric",
+                    "GUID": "8f34ea35-8652-454c-a505-1980bbad74a9",
+                    "required": true,
+                    "mode": "decimal128",
+                    "error": {}
+                },
+                {
+                    "name": "_id",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "objectId",
+                    "GUID": "fb85c5c0-faa4-47a4-bf8c-a6bfa773e8c9",
+                    "required": true,
+                    "primaryKey": true,
+                    "error": {},
+                    "childRelationships": [
+                        "7f70e396-c41c-4c8b-83e9-e99e632795bd"
+                    ]
+                },
+                {
+                    "name": "Descripció",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "da819613-b14c-4217-a642-169792d2084b",
+                    "required": true,
+                    "error": {}
+                },
+                {
+                    "name": "Categoria pizza",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "objectId",
+                    "GUID": "0ee78090-b209-48ad-a88d-9e3b96877314",
+                    "foreignCollection": "5ba292f7-a8fd-47ef-804b-70157bf8de70",
+                    "foreignField": [
+                        "5ba292f7-a8fd-47ef-804b-70157bf8de70",
+                        "d5e18d9f-517d-4026-b293-55d3a249eb15",
+                        "605e76c4-8e72-46dd-a7d0-0e79f82b7b55",
+                        "69cad76d-34d8-49c2-8975-7af5749bd18d"
+                    ],
+                    "relationshipType": "Foreign Key",
+                    "parentRelationship": "15f2a738-ecc9-43d9-a9d1-6e6c37bbd3c0",
+                    "error": {}
+                },
+                {
+                    "name": "Nom",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "3d939bed-1a9a-4d8f-87b3-84ab253c9802",
+                    "required": true,
+                    "error": {}
+                },
+                {
+                    "name": "Imatge",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "document",
+                    "properties": [],
+                    "additionalProperties": false,
+                    "GUID": "194d5be5-ed57-4cd1-977b-9aac850b6dd5",
+                    "required": true,
+                    "error": {}
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "9f0f490a-222b-48af-8f4d-2e26f908dded"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "validationLevel": "Off",
+            "validationAction": "Warn",
+            "storageEngineName": "WiredTiger",
+            "collectionUsers": [],
+            "indexes": [],
+            "collation": {},
+            "sharding": {
+                "unique": true,
+                "collation": "null"
+            },
+            "GUID": "7639b77a-f5bd-4369-8184-306da7254a48",
+            "bucketId": "4d591320-8230-46dd-b10c-4b35d0c7724e"
+        },
+        {
+            "collectionName": "Categories pizzes",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "Categories",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "array",
+                    "properties": [
+                        {
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "document",
+                            "properties": [
+                                {
+                                    "name": "IdCategoria",
+                                    "hackoladeMeta": {},
+                                    "isActivated": true,
+                                    "type": "objectId",
+                                    "GUID": "69cad76d-34d8-49c2-8975-7af5749bd18d",
+                                    "required": true,
+                                    "primaryKey": true,
+                                    "error": {},
+                                    "childRelationships": [
+                                        "15f2a738-ecc9-43d9-a9d1-6e6c37bbd3c0"
+                                    ]
+                                },
+                                {
+                                    "name": "Nom",
+                                    "hackoladeMeta": {},
+                                    "isActivated": true,
+                                    "type": "string",
+                                    "GUID": "0f4b5f1b-0306-4008-ac53-e996686f6d9d",
+                                    "required": true,
+                                    "error": {}
+                                }
+                            ],
+                            "additionalProperties": false,
+                            "GUID": "605e76c4-8e72-46dd-a7d0-0e79f82b7b55",
+                            "arrayItem": true,
+                            "arrayParentType": "array",
+                            "error": {},
+                            "displayName": "Categoria"
+                        }
+                    ],
+                    "additionalItems": true,
+                    "GUID": "d5e18d9f-517d-4026-b293-55d3a249eb15",
+                    "uniqueItems": true,
+                    "minItems": 1,
+                    "required": true,
+                    "error": {}
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "da33e809-ad69-4358-b249-d4e21eb0c196"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "validationLevel": "Off",
+            "validationAction": "Warn",
+            "storageEngineName": "WiredTiger",
+            "collectionUsers": [],
+            "indexes": [],
+            "collation": {},
+            "sharding": {
+                "unique": true,
+                "collation": "null"
+            },
+            "GUID": "5ba292f7-a8fd-47ef-804b-70157bf8de70",
+            "bucketId": "4d591320-8230-46dd-b10c-4b35d0c7724e"
+        },
+        {
+            "collectionName": "Botigues",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "Adreça",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "document",
+                    "properties": [
+                        {
+                            "name": "Carrer",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "ce860951-7e13-4eff-a29a-0eeb4bd6d9fd",
+                            "required": true,
+                            "error": {}
+                        },
+                        {
+                            "name": "Localitat",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "ecbfe800-a702-40b0-9409-5d73b7137ee1",
+                            "required": true,
+                            "error": {}
+                        },
+                        {
+                            "name": "Provincia",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "064150db-b474-408f-80c2-10b545181b64",
+                            "required": true,
+                            "error": {}
+                        },
+                        {
+                            "name": "Codi postal",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "numeric",
+                            "required": true,
+                            "GUID": "781e4864-85db-47e3-aad1-2b66c177221b",
+                            "mode": "integer32",
+                            "error": {}
+                        }
+                    ],
+                    "additionalProperties": false,
+                    "GUID": "cb1a8f5d-aa59-4bc4-85b7-778624fbc313",
+                    "required": true,
+                    "error": {}
+                },
+                {
+                    "name": "Treballadors",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "array",
+                    "properties": [
+                        {
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "document",
+                            "properties": [
+                                {
+                                    "name": "IdTreballador",
+                                    "hackoladeMeta": {},
+                                    "isActivated": true,
+                                    "type": "objectId",
+                                    "GUID": "3daf465a-c1a7-4678-8651-bbc40b0a59e6",
+                                    "required": true,
+                                    "primaryKey": true,
+                                    "error": {},
+                                    "childRelationships": [
+                                        "ccdf126a-ec00-4a72-9b7c-25439370bb1c"
+                                    ]
+                                },
+                                {
+                                    "hackoladeMeta": {},
+                                    "isActivated": true,
+                                    "type": "string",
+                                    "GUID": "de23ad6f-a754-46a2-984a-0728287d8c31",
+                                    "name": "Nom",
+                                    "required": true,
+                                    "error": {}
+                                },
+                                {
+                                    "hackoladeMeta": {},
+                                    "isActivated": true,
+                                    "type": "string",
+                                    "GUID": "ed31bb35-48c3-4860-8536-1dcf700f5660",
+                                    "name": "Cognoms",
+                                    "required": true,
+                                    "error": {}
+                                },
+                                {
+                                    "hackoladeMeta": {},
+                                    "isActivated": true,
+                                    "type": "string",
+                                    "GUID": "1dc1bff0-ee1b-4659-a4b7-06fd9ba2a1c6",
+                                    "name": "NIF",
+                                    "required": true,
+                                    "error": {}
+                                },
+                                {
+                                    "name": "Telèfon",
+                                    "hackoladeMeta": {},
+                                    "isActivated": true,
+                                    "type": "numeric",
+                                    "required": true,
+                                    "GUID": "23760cc2-f5c3-4585-8a42-2ac35c44bd29",
+                                    "mode": "integer32",
+                                    "error": {}
+                                },
+                                {
+                                    "name": "Tasca",
+                                    "hackoladeMeta": {},
+                                    "isActivated": true,
+                                    "type": "string",
+                                    "GUID": "f6f031d9-aee1-42c3-85e7-df6c924b6045",
+                                    "required": true,
+                                    "error": {}
+                                }
+                            ],
+                            "additionalProperties": false,
+                            "GUID": "80b845f3-87c8-467a-9538-e47f8c4f4f7b",
+                            "arrayItem": true,
+                            "arrayParentType": "array",
+                            "displayName": "Treballador",
+                            "error": {}
+                        }
+                    ],
+                    "additionalItems": true,
+                    "GUID": "d5a0d833-0624-451b-9694-e648dd11da2d",
+                    "required": true,
+                    "minItems": 1,
+                    "error": {}
+                },
+                {
+                    "name": "_id",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "objectId",
+                    "GUID": "c8b6e1fc-319a-43f2-8873-8b0f48fb7441",
+                    "required": true,
+                    "primaryKey": true,
+                    "error": {},
+                    "childRelationships": [
+                        "f1ccb5f2-87cc-473e-89b2-8ccc46414c42"
+                    ]
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "7a9d59ac-a63b-4e7c-8af6-1985464535a4"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "validationLevel": "Off",
+            "validationAction": "Warn",
+            "storageEngineName": "WiredTiger",
+            "collectionUsers": [],
+            "indexes": [],
+            "collation": {},
+            "sharding": {
+                "unique": true,
+                "collation": "null"
+            },
+            "GUID": "c7730f6e-4359-41d9-aec4-43497a0f3c8e",
+            "bucketId": "4d591320-8230-46dd-b10c-4b35d0c7724e"
+        }
+    ],
+    "buckets": [
+        {
+            "name": "Pizzeria",
+            "type": "bucket",
+            "collectionIds": [
+                "4afbf132-29f5-4d02-bc9d-1ceb2e0cb19e",
+                "f517886a-f265-4743-aabe-d0669088bc79",
+                "7639b77a-f5bd-4369-8184-306da7254a48",
+                "5ba292f7-a8fd-47ef-804b-70157bf8de70",
+                "c7730f6e-4359-41d9-aec4-43497a0f3c8e"
+            ],
+            "backgroundColor": {
+                "r": 216,
+                "g": 0,
+                "b": 115,
+                "a": 1
+            },
+            "show": true,
+            "isActivated": true,
+            "GUID": "4d591320-8230-46dd-b10c-4b35d0c7724e"
+        }
+    ],
+    "views": [],
+    "relationships": [
+        {
+            "name": "fk Comandes.Client to Clients._id",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "4afbf132-29f5-4d02-bc9d-1ceb2e0cb19e",
+                    "8d011551-1a08-485b-a553-fd807f4a84e8"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "f517886a-f265-4743-aabe-d0669088bc79",
+                    "d0611c1a-002e-427f-bdc6-3814c455b901"
+                ]
+            ],
+            "childCardinality": "0..n",
+            "GUID": "09cc8fad-5129-4600-bd55-47303883c053",
+            "parentCollection": "4afbf132-29f5-4d02-bc9d-1ceb2e0cb19e",
+            "childCollection": "f517886a-f265-4743-aabe-d0669088bc79",
+            "hackoladeStyles": {
+                "GUID": "78f31d9f-8a5c-4b00-94b9-51b8272abc2e",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 466,
+                        "y": 312.5
+                    },
+                    {
+                        "x": 431,
+                        "y": 312.5
+                    },
+                    {
+                        "x": 431,
+                        "y": 294.5
+                    },
+                    {
+                        "x": 396,
+                        "y": 294.5
+                    }
+                ],
+                "sides": [
+                    "left",
+                    "right"
+                ]
+            }
+        },
+        {
+            "name": "fk Comandes.Productes.[0].IdProducte to Productes._id",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "7639b77a-f5bd-4369-8184-306da7254a48",
+                    "fb85c5c0-faa4-47a4-bf8c-a6bfa773e8c9"
+                ]
+            ],
+            "parentCardinality": "1..n",
+            "childField": [
+                [
+                    "f517886a-f265-4743-aabe-d0669088bc79",
+                    "c96b5f50-c195-436b-80ff-ff2a17925d5f",
+                    "57dd0e2c-8716-426e-af02-ef6fcaf2aa11",
+                    "c8129a37-eacc-4989-b207-8a2e1731e9d6"
+                ]
+            ],
+            "childCardinality": "0..n",
+            "GUID": "7f70e396-c41c-4c8b-83e9-e99e632795bd",
+            "parentCollection": "7639b77a-f5bd-4369-8184-306da7254a48",
+            "childCollection": "f517886a-f265-4743-aabe-d0669088bc79",
+            "hackoladeStyles": {
+                "GUID": "49872abd-58a7-4ade-9749-93243eebf870",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 595,
+                        "y": 428
+                    },
+                    {
+                        "x": 595,
+                        "y": 463
+                    },
+                    {
+                        "x": 645.5,
+                        "y": 463
+                    },
+                    {
+                        "x": 645.5,
+                        "y": 498
+                    }
+                ],
+                "sides": [
+                    "bottom",
+                    "top"
+                ]
+            }
+        },
+        {
+            "name": "fk Productes.Categoria pizza to Categories pizzes.Categories.[0].IdCategoria",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "5ba292f7-a8fd-47ef-804b-70157bf8de70",
+                    "d5e18d9f-517d-4026-b293-55d3a249eb15",
+                    "605e76c4-8e72-46dd-a7d0-0e79f82b7b55",
+                    "69cad76d-34d8-49c2-8975-7af5749bd18d"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "7639b77a-f5bd-4369-8184-306da7254a48",
+                    "0ee78090-b209-48ad-a88d-9e3b96877314"
+                ]
+            ],
+            "childCardinality": "0..n",
+            "GUID": "15f2a738-ecc9-43d9-a9d1-6e6c37bbd3c0",
+            "parentCollection": "5ba292f7-a8fd-47ef-804b-70157bf8de70",
+            "childCollection": "7639b77a-f5bd-4369-8184-306da7254a48",
+            "hackoladeStyles": {
+                "GUID": "81488c51-07a4-4ae7-b00e-966381a047e9",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 519,
+                        "y": 577.5
+                    },
+                    {
+                        "x": 472,
+                        "y": 577.5
+                    },
+                    {
+                        "x": 472,
+                        "y": 494.5
+                    },
+                    {
+                        "x": 425,
+                        "y": 494.5
+                    }
+                ],
+                "sides": [
+                    "left",
+                    "right"
+                ]
+            }
+        },
+        {
+            "name": "fk Comandes.Botiga to Botigues._id",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "c7730f6e-4359-41d9-aec4-43497a0f3c8e",
+                    "c8b6e1fc-319a-43f2-8873-8b0f48fb7441"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "f517886a-f265-4743-aabe-d0669088bc79",
+                    "eeffb23f-9863-429c-9b0d-a11f4e825482"
+                ]
+            ],
+            "childCardinality": "0..n",
+            "GUID": "f1ccb5f2-87cc-473e-89b2-8ccc46414c42",
+            "parentCollection": "c7730f6e-4359-41d9-aec4-43497a0f3c8e",
+            "childCollection": "f517886a-f265-4743-aabe-d0669088bc79",
+            "hackoladeStyles": {
+                "GUID": "3441735c-236b-4738-855c-712b2248dff1",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 724,
+                        "y": 351
+                    },
+                    {
+                        "x": 765,
+                        "y": 351
+                    },
+                    {
+                        "x": 765,
+                        "y": 409
+                    },
+                    {
+                        "x": 806,
+                        "y": 409
+                    }
+                ],
+                "sides": [
+                    "right",
+                    "left"
+                ]
+            }
+        },
+        {
+            "name": "fk Comandes.Repartiment.Repartidor to Botigues.Treballadors.[0].IdTreballador",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "c7730f6e-4359-41d9-aec4-43497a0f3c8e",
+                    "d5a0d833-0624-451b-9694-e648dd11da2d",
+                    "80b845f3-87c8-467a-9538-e47f8c4f4f7b",
+                    "3daf465a-c1a7-4678-8651-bbc40b0a59e6"
+                ]
+            ],
+            "parentCardinality": "0..1",
+            "childField": [
+                [
+                    "f517886a-f265-4743-aabe-d0669088bc79",
+                    "a1833b81-5fb6-47fb-9f18-6b7f2f48c108",
+                    "21864543-1ec5-4a92-9c33-a291fea3f1ef"
+                ]
+            ],
+            "childCardinality": "0..n",
+            "GUID": "ccdf126a-ec00-4a72-9b7c-25439370bb1c",
+            "parentCollection": "c7730f6e-4359-41d9-aec4-43497a0f3c8e",
+            "childCollection": "f517886a-f265-4743-aabe-d0669088bc79",
+            "hackoladeStyles": {
+                "GUID": "87463cdf-d471-4f64-9027-9092973c2eb9",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 724,
+                        "y": 274
+                    },
+                    {
+                        "x": 765,
+                        "y": 274
+                    },
+                    {
+                        "x": 765,
+                        "y": 314
+                    },
+                    {
+                        "x": 806,
+                        "y": 314
+                    }
+                ],
+                "sides": [
+                    "right",
+                    "left"
+                ]
+            }
+        }
+    ],
+    "users": [],
+    "diagramViews": [],
+    "idToNameHashTable": {
+        "4d591320-8230-46dd-b10c-4b35d0c7724e": "Pizzeria",
+        "4afbf132-29f5-4d02-bc9d-1ceb2e0cb19e": "Clients",
+        "8d011551-1a08-485b-a553-fd807f4a84e8": "_id",
+        "81befb7d-4dd8-422e-aa31-13c49fc1a395": "Nom",
+        "21d035a7-5cac-4767-92b9-afcac0f35499": "Cognoms",
+        "1935e318-28a1-4e03-afb2-5a60ef706fba": "Adreça",
+        "1c75cd4e-dc72-44da-9a41-4ec42189d282": "Carrer",
+        "51f60ed4-32d3-4338-aaa5-42177396651b": "Localitat",
+        "316759b6-2823-45d9-9857-2523e13f81d9": "Codi postal",
+        "54dec81f-6ddc-4d94-ab06-fd638f1f5bb2": "Provincia",
+        "cd4041ed-15a3-495f-bf2b-00c2dbe8ee79": "Telèfon",
+        "f517886a-f265-4743-aabe-d0669088bc79": "Comandes",
+        "da29be9a-4ca2-4e25-b8b3-253f3fd8dfdb": "_id",
+        "d0611c1a-002e-427f-bdc6-3814c455b901": "Client",
+        "09cc8fad-5129-4600-bd55-47303883c053": "fk Comandes.Client to Clients._id",
+        "2b7e6888-0684-4d4c-8bfc-870859716204": "Data/hora",
+        "a1833b81-5fb6-47fb-9f18-6b7f2f48c108": "Repartiment",
+        "c96b5f50-c195-436b-80ff-ff2a17925d5f": "Productes",
+        "c8129a37-eacc-4989-b207-8a2e1731e9d6": "IdProducte",
+        "ba801954-5aa6-4aa5-a439-acc04ed1f35e": "Quantitat",
+        "7639b77a-f5bd-4369-8184-306da7254a48": "Productes",
+        "fb85c5c0-faa4-47a4-bf8c-a6bfa773e8c9": "_id",
+        "7f70e396-c41c-4c8b-83e9-e99e632795bd": "fk Comandes.Productes.[0].IdProducte to Productes._id",
+        "e5a1ad36-7a2a-4626-97e6-91def1587a11": "Tipus",
+        "3d939bed-1a9a-4d8f-87b3-84ab253c9802": "Nom",
+        "da819613-b14c-4217-a642-169792d2084b": "Descripció",
+        "194d5be5-ed57-4cd1-977b-9aac850b6dd5": "Imatge",
+        "8f34ea35-8652-454c-a505-1980bbad74a9": "Preu",
+        "0ee78090-b209-48ad-a88d-9e3b96877314": "Categoria pizza",
+        "5ba292f7-a8fd-47ef-804b-70157bf8de70": "Categories pizzes",
+        "d5e18d9f-517d-4026-b293-55d3a249eb15": "Categories",
+        "69cad76d-34d8-49c2-8975-7af5749bd18d": "IdCategoria",
+        "0f4b5f1b-0306-4008-ac53-e996686f6d9d": "Nom",
+        "15f2a738-ecc9-43d9-a9d1-6e6c37bbd3c0": "fk Productes.Categoria pizza to Categories pizzes.Categories.[0].IdCategoria",
+        "eeffb23f-9863-429c-9b0d-a11f4e825482": "Botiga",
+        "c7730f6e-4359-41d9-aec4-43497a0f3c8e": "Botigues",
+        "c8b6e1fc-319a-43f2-8873-8b0f48fb7441": "_id",
+        "f1ccb5f2-87cc-473e-89b2-8ccc46414c42": "fk Comandes.Botiga to Botigues._id",
+        "cb1a8f5d-aa59-4bc4-85b7-778624fbc313": "Adreça",
+        "ce860951-7e13-4eff-a29a-0eeb4bd6d9fd": "Carrer",
+        "ecbfe800-a702-40b0-9409-5d73b7137ee1": "Localitat",
+        "064150db-b474-408f-80c2-10b545181b64": "Provincia",
+        "781e4864-85db-47e3-aad1-2b66c177221b": "Codi postal",
+        "d5a0d833-0624-451b-9694-e648dd11da2d": "Treballadors",
+        "3daf465a-c1a7-4678-8651-bbc40b0a59e6": "IdTreballador",
+        "de23ad6f-a754-46a2-984a-0728287d8c31": "Nom",
+        "ed31bb35-48c3-4860-8536-1dcf700f5660": "Cognoms",
+        "1dc1bff0-ee1b-4659-a4b7-06fd9ba2a1c6": "NIF",
+        "23760cc2-f5c3-4585-8a42-2ac35c44bd29": "Telèfon",
+        "f6f031d9-aee1-42c3-85e7-df6c924b6045": "Tasca",
+        "21864543-1ec5-4a92-9c33-a291fea3f1ef": "Repartidor",
+        "189b788d-e297-4f68-940b-a0829c08b52d": "Data/hora",
+        "ccdf126a-ec00-4a72-9b7c-25439370bb1c": "fk Comandes.Repartiment.Repartidor to Botigues.Treballadors.[0].IdTreballador"
+    },
+    "definitions": {
+        "type": "definitions",
+        "properties": [],
+        "GUID": "71b42985-87e0-40e6-b64b-7786d0c74537"
+    },
+    "polyglotDefinitions": {
+        "type": "polyglotDefinitions",
+        "properties": [],
+        "GUID": "ccaf3dfd-568d-45fe-9f1a-75d4a823ca0f"
+    },
+    "externalDefinitions": {
+        "type": "externalDefinitions",
+        "properties": [],
+        "GUID": "f1e75f28-028e-483a-9235-4d9451e58ae8"
+    },
+    "sources": [],
+    "decorativeSymbols": [],
+    "dbVersion": "v5.0",
+    "dbVendor": "MongoDB",
+    "appTarget": "MONGODB",
+    "creationTS": "2023-03-07T08:49:16.194Z",
+    "GUID": "12cad9f4-45e3-4589-b363-2c58c47dcb15",
+    "isLineageEnabled": false,
+    "hackoladeMeta": {
+        "validationErrors": {
+            "modelName": false
+        }
+    },
+    "lastModifTS": "2023-03-07T09:32:11.377Z",
+    "persistenceSchemaVersion": "6",
+    "isCreatedByPlugin": true,
+    "pluginInformation": {
+        "pluginEngineVersion": "1.0.0"
+    },
+    "applicationInformation": {
+        "version": "6.9.4"
+    },
+    "settings": {
+        "centralPane": {
+            "dbLevel": {
+                "erd": [
+                    {
+                        "GUID": "4afbf132-29f5-4d02-bc9d-1ceb2e0cb19e",
+                        "x": 156,
+                        "y": 197,
+                        "width": 240,
+                        "height": 195,
+                        "color": {}
+                    },
+                    {
+                        "GUID": "f517886a-f265-4743-aabe-d0669088bc79",
+                        "x": 466,
+                        "y": 197,
+                        "width": 258,
+                        "height": 231,
+                        "color": {}
+                    },
+                    {
+                        "GUID": "7639b77a-f5bd-4369-8184-306da7254a48",
+                        "x": 518,
+                        "y": 498,
+                        "width": 255,
+                        "height": 159,
+                        "color": {}
+                    },
+                    {
+                        "GUID": "5ba292f7-a8fd-47ef-804b-70157bf8de70",
+                        "x": 173,
+                        "y": 442,
+                        "width": 251,
+                        "height": 105,
+                        "color": {}
+                    },
+                    {
+                        "GUID": "c7730f6e-4359-41d9-aec4-43497a0f3c8e",
+                        "x": 806,
+                        "y": 219,
+                        "width": 273,
+                        "height": 285,
+                        "color": {}
+                    }
+                ],
+                "erdDefinitions": {
+                    "erd": [],
+                    "rootPath": [],
+                    "entities": [],
+                    "decorativeSymbols": []
+                },
+                "buckets": [
+                    {
+                        "x": 116,
+                        "y": 157,
+                        "GUID": "4d591320-8230-46dd-b10c-4b35d0c7724e"
+                    }
+                ],
+                "collapsedNodes": [],
+                "activeRelationship": "",
+                "activeRelationshipFields": {
+                    "childField": [],
+                    "parentField": []
+                },
+                "selectedCollections": [],
+                "displayColorPicker": false,
+                "graphView": {
+                    "erd": [],
+                    "buckets": [],
+                    "decorativeSymbols": [],
+                    "forceLayout": true,
+                    "defaultLinkLength": 300
+                },
+                "diagramViews": [],
+                "decorativeSymbols": [],
+                "nestedCollectionsLayout": "horizontal",
+                "options": [],
+                "relationshipUpdateDisabled": false
+            },
+            "collectionLevel": {},
+            "changed": false
+        },
+        "dtDiagram": {
+            "collapsedNodes": [],
+            "shouldDistributeCollections": false
+        }
+    }
+}
