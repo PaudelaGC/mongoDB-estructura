@@ -1,0 +1,8 @@
+//Las queries s'han realitzat a dins del MongoDB Compass
+Query 1: {}
+Query 2: (Project) {restaurant_id: 1, name: 1, borough: 1, cuisine: 1}
+Query 3: (Project) {_id: 0, restaurant_id: 1, name: 1, borough: 1, cuisine: 1}
+Query 4: (Project) {_id: 0, restaurant_id: 1, name: 1, borough: 1, "address.zipcode": 1}
+Query 5: {borough: "Bronx"}
+Query 6: {borough: "Bronx"} // Options: Limit 5
+Query 7: {borough: "Bronx"} // OPtions: Limit 5 Skip 5
