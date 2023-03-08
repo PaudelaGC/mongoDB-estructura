@@ -1,22 +1,158 @@
-//Las queries s'han realitzat a dins del MongoDB Compass
-Query 1: (Filter) {}
-Query 2: (Project) {restaurant_id: 1, name: 1, borough: 1, cuisine: 1}
-Query 3: (Project) {_id: 0, restaurant_id: 1, name: 1, borough: 1, cuisine: 1}
-Query 4: (Project) {_id: 0, restaurant_id: 1, name: 1, borough: 1, "address.zipcode": 1}
-Query 5: (Filter) {borough: "Bronx"}
-Query 6: (Filter) {borough: "Bronx"} // Options: Limit 5
-Query 7: (Filter) {borough: "Bronx"} // OPtions: Limit 5 Skip 5
-Query 8: Aggregations:
-$unwind {
-  path: "$grades",
+//Las queries s'han realitzat a dins del MongoDB Compass amb Aggregations
+
+Query 1: $match {}
+
+Query 2: $project {restaurant_id: 1, name: 1, borough: 1, cuisine: 1}
+
+Query 3: $project {_id: 0, restaurant_id: 1, name: 1, borough: 1, cuisine: 1}
+
+Query 4: $project {_id: 0, restaurant_id: 1, name: 1, borough: 1, "address.zipcode": 1}
+
+Query 5: $match {borough: "Bronx"}
+
+Query 6: 
+$match { borough: "Bronx",
 }
-$group
-{
-  _id: "$restaurant_id",
-  grades: { $sum: "$grades.score" },
+$limit { 5, 
 }
-$match
-{
-  grades: {$gt: 90}
+
+Query 7:
+$match { borough: "Bronx",
 }
-Query 9: 
+$limit { 5,
+}
+$skip { 5,
+}
+
+Query 8:
+$unwind { path: "$grades",
+}
+$group { _id: "$restaurant_id",
+        grades: { $sum: "$grades.score" },
+}
+$match { grades: {$gt: 90},
+}
+
+Query 9:
+$unwind { path: "$grades",
+}
+$group { _id: "$restaurant_id",
+         grades: { $sum: "$grades.score" },
+}
+$match { grades: {$gt: 80},
+         grades: {$lt: 100}
+}
+
+Query 10:
+$project { restaurant_id: 1,
+           name: 1,
+           long: { $arrayElemAt: ["$address.coord", 0] },
+}
+$match { long: {$lt: -95.754168},
+}
+
+Query 11: 
+$project { restaurant_id: 1,
+           name: 1,
+           cuisine: 1,
+           grades: 1,
+           long: { $arrayElemAt: ["$address.coord", 0] },
+}
+$match { cuisine: { $ne: "American " },
+         long: {$lt: -65.754168},
+}
+$unwind { path: "$grades",
+}
+$group { _id: "$restaurant_id",
+         grades: { $sum: "$grades.score" },
+}
+$match { grades: {$gt: 70}
+}
+
+Query 12: Identic al 11
+
+Query 13: 
+$addFields { scoreA: { $in: [ "A", "$grades.grade" ] },
+}
+$match { cuisine: { $ne: "American " },
+         borough: { $ne: "Brooklyn" },
+         scoreA: true,
+}
+$sort { cuisine: -1,
+}
+
+Query 14: 
+$addFields { start: { $substr: ["$name", 0, 3] },
+}
+$match { start: "Wil",
+}
+$project { restaurant_id: 1,
+           name: 1,
+           borough: 1,
+           cuisine: 1,
+}
+
+Query 15:
+$addFields{
+  valid: {
+    $subtract: [{ $strLenCP: "$name" }, 3],
+  },
+}
+$match{
+  valid: { $gt: 2 },
+}
+$addFields{
+  end: {
+    $substrBytes: [
+      "$name",
+      {
+        $subtract: [{ $strLenBytes: "$name" }, 3],
+      },
+      3,
+    ],
+  },
+}
+$match{
+  end: "ces",
+}
+$project{
+  restaurant_id: 1,
+  name: 1,
+  borough: 1,
+  cuisine: 1,
+}
+
+Query 16: 
+$addFields{
+  result: {
+    $regexMatch: {
+      input: "$name",
+      regex: /Reg/,
+    },
+  },
+}
+$match{
+  result: true
+}
+$project{
+  restaurant_id: 1,
+  name: 1,
+  borough: 1,
+  cuisine: 1,
+}
+
+Query 17:
+$addFields{
+  correctCuisine: {
+    $or: [
+      { $eq: ["$cuisine", "American "] },
+      { $eq: ["$cuisine", "Chinese"] },
+    ],
+  },
+}
+$match{
+  borough: "Bronx",
+  correctCuisine: true,
+}
+
+
